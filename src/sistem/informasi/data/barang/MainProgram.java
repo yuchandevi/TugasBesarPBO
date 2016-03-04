@@ -10,5 +10,7 @@ package sistem.informasi.data.barang;
  * @author Windows
  */
 public class MainProgram {
-    
+    public static void main(String[] args) {
+        System.out.println("Hello World !");
+    }
 }
