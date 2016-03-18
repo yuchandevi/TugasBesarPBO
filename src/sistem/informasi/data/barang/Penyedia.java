@@ -11,9 +11,19 @@ package sistem.informasi.data.barang;
  */
 public class Penyedia extends Orang { 
    private Barang[] daftarBarang = new Barang[10];
+   private int index;
 
-    public void Createbarang(){
-    }
+   public Penyedia(){
+   }
+   
+   public Penyedia(String nama, long id){
+       super(nama,id);
+   }
+   
+   public void Createbarang(long id, int jumlah_stok, String nama_barang){
+       daftarBarang[index] = new Barang(id,jumlah_stok,nama_barang);
+       index++;
+   }
     
     @Override
     public String getNama() {
@@ -40,6 +50,20 @@ public class Penyedia extends Orang {
      */
     public Barang[] getDaftarBarang() {
         return daftarBarang;
+    }
+
+    /**
+     * @return the index
+     */
+    public int getIndex() {
+        return index;
+    }
+
+    /**
+     * @param index the index to set
+     */
+    public void setIndex(int index) {
+        this.index = index;
     }
 
     /**
