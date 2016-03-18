@@ -14,6 +14,7 @@ public class Gudang {
     private int kapasitas;
     private String nama_gudang;
     private Barang[] barangGudang = new Barang[10];
+    private int indeks;
     
     public Gudang(){
     }
@@ -25,6 +26,11 @@ public class Gudang {
     }
     
     public void addBarang(Barang b){
+        if (kapasitas >= b.getJumlah_stok()){
+            barangGudang[getIndeks()] = b;
+            indeks++;
+            kapasitas = kapasitas-b.getJumlah_stok();
+        }
     }
 
     /**
@@ -81,6 +87,20 @@ public class Gudang {
      */
     public void setBarangGudang(Barang[] barangGudang) {
         this.barangGudang = barangGudang;
+    }
+
+    /**
+     * @return the indeks
+     */
+    public int getIndeks() {
+        return indeks;
+    }
+
+    /**
+     * @param indeks the indeks to set
+     */
+    public void setIndeks(int indeks) {
+        this.indeks = indeks;
     }
     
     
