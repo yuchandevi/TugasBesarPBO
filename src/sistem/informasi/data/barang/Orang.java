@@ -10,37 +10,45 @@ package sistem.informasi.data.barang;
  * @author Windows
  */
 public abstract class Orang {
-  protected String nama;
-  protected long id;
+    protected String nama;
+    protected long id;
   
-  public Orang(){
+    public Orang(){
   
-  }
+    }
   
-  public Orang(String nama, long id){
-   this.nama = nama;
-   this.id = id;
-  }
+    public Orang(String nama, long id){
+        this.nama = nama;
+        this.id = id;
+    }
   
-      /**
+    /**
      * @return the nama
      */
-    public abstract String getNama();
+    public String getNama(){
+        return nama;
+    }
 
     /**
      * @param nama the nama to set
      */
-    public abstract void setNama(String nama);
-
+    public void setNama(String nama){
+        this.nama = nama;
+    }
+    
     /**
      * @return the id
      */
-    public abstract long getId();
-
+    public long getId(){
+        return id;
+    }
+    
     /**
      * @param id the id to set
      */
-    public abstract void setId(long id);
-  
-  
+    public  void setId(long id){
+        this.id= id;
+    }
+    
+    public abstract void lihatBarang(String nama);
 }

@@ -5,6 +5,8 @@
  */
 package sistem.informasi.data.barang;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Windows
@@ -13,9 +15,8 @@ public class Gudang {
     private long id;
     private int kapasitas;
     private String nama_gudang;
-    private Barang[] barangGudang = new Barang[10];
-    private int indeks;
-    
+    private ArrayList<Barang>  barangGudang = new ArrayList();
+      
     public Gudang(){
     }
     
@@ -27,8 +28,7 @@ public class Gudang {
     
     public void addBarang(Barang b){
         if (kapasitas >= b.getJumlah_stok()){
-            barangGudang[getIndeks()] = b;
-            indeks++;
+            barangGudang.add(b);
             kapasitas = kapasitas-b.getJumlah_stok();
         }
     }
@@ -78,30 +78,7 @@ public class Gudang {
     /**
      * @return the barangGudang
      */
-    public Barang[] getBarangGudang() {
+    public ArrayList<Barang> getBarangGudang() {
         return barangGudang;
     }
-
-    /**
-     * @param barangGudang the barangGudang to set
-     */
-    public void setBarangGudang(Barang[] barangGudang) {
-        this.barangGudang = barangGudang;
-    }
-
-    /**
-     * @return the indeks
-     */
-    public int getIndeks() {
-        return indeks;
-    }
-
-    /**
-     * @param indeks the indeks to set
-     */
-    public void setIndeks(int indeks) {
-        this.indeks = indeks;
-    }
-    
-    
 }

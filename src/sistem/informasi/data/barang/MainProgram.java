@@ -19,14 +19,16 @@ public class MainProgram {
        System.out.println(p.getId());
        p.Createbarang(112, 12,"Galon");
        p.Createbarang(113, 4, "Kursi");
-       System.out.println(p.getDaftarBarang()[0].getNama_barang());
-       System.out.println(p.getDaftarBarang()[0].getJumlah_stok());
-       System.out.println(p.getDaftarBarang()[1].getNama_barang());
-       System.out.println(p.getDaftarBarang()[1].getJumlah_stok());
+       System.out.println(p.getDaftarBarang().get(0).getNama_barang());
+       System.out.println(p.getDaftarBarang().get(0).getJumlah_stok());
+       System.out.println(p.getDaftarBarang().get(1).getNama_barang());
+       System.out.println(p.getDaftarBarang().get(1).getJumlah_stok());
        System.out.println("=======COBA CLASS PETUGAS========");
+       Gudang G = new Gudang(112,20,"Gudang Barang");
        Petugas pt = new Petugas("Kadek",1103120069);
        pt.setNama("Abi");
        pt.setId(130);
+       pt.setG(G);
        System.out.println(pt.getNama());
        System.out.println(pt.getId());
        pt.addBarang("Galon", 10, p);
@@ -34,11 +36,11 @@ public class MainProgram {
        pt.lihatBarang("Galon");
        pt.lihatBarang("Kursi");
        pt.editBarang("Galon", 3);
-       System.out.println("jumlah baru: "+pt.G.getBarangGudang()[0].getJumlah_stok());
-       System.out.println("kapasitas sebelum di hapus: "+pt.G.getKapasitas());
+       System.out.println("jumlah baru: "+pt.getG().getBarangGudang().get(0).getJumlah_stok());
+       System.out.println("kapasitas sebelum di hapus: "+pt.getG().getKapasitas());
        pt.hapusBarang("Galon");
-       System.out.println("Barang ada: "+pt.G.getBarangGudang()[0].getNama_barang());
-       System.out.println("kapasitas baru: "+pt.G.getKapasitas());
+       System.out.println("Barang ada: "+pt.getG().getBarangGudang().get(0).getNama_barang());
+       System.out.println("kapasitas baru: "+pt.getG().getKapasitas());
        
     }
 }
