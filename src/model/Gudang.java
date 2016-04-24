@@ -1,16 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package sistem.informasi.data.barang;
+package model;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
-/**
- *
- * @author Windows
- */
 public class Gudang {
     private long id;
     private int kapasitas;
@@ -30,55 +22,37 @@ public class Gudang {
         if (kapasitas >= b.getJumlah_stok()){
             barangGudang.add(b);
             kapasitas = kapasitas-b.getJumlah_stok();
+            JOptionPane.showMessageDialog(null,"Tambah Data Barang Berhasil !","Sukses !",1);
+        }else{
+            JOptionPane.showMessageDialog(null,"Kapasitas Gudang Penuh !","Error !",0);
         }
     }
 
-    /**
-     * @return the id
-     */
     public long getId() {
         return id;
     }
-
-    /**
-     * @param id the id to set
-     */
     public void setId(long id) {
         this.id = id;
     }
-
-    /**
-     * @return the kapasitas
-     */
     public int getKapasitas() {
         return kapasitas;
     }
-
-    /**
-     * @param kapasitas the kapasitas to set
-     */
     public void setKapasitas(int kapasitas) {
         this.kapasitas = kapasitas;
     }
-
-    /**
-     * @return the nama_gudang
-     */
     public String getNama_gudang() {
         return nama_gudang;
     }
-
-    /**
-     * @param nama_gudang the nama_gudang to set
-     */
     public void setNama_gudang(String nama_gudang) {
         this.nama_gudang = nama_gudang;
     }
-
-    /**
-     * @return the barangGudang
-     */
     public ArrayList<Barang> getBarangGudang() {
         return barangGudang;
+    }
+    public Barang getBarang(int Indeks){
+        return(barangGudang.get(Indeks));
+    }    
+    public void removeBarang(int Indeks){
+        barangGudang.remove(Indeks);
     }
 }

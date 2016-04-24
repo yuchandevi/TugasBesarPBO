@@ -1,16 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package sistem.informasi.data.barang;
+package model;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author Windows
- */
 public class Penyedia extends Orang { 
    private ArrayList<Barang> daftarBarang = new ArrayList();
    
@@ -26,7 +17,6 @@ public class Penyedia extends Orang {
         daftarBarang.add(b);
     }
     
-   @Override
     public void lihatBarang(String nama){
         for (int i=0; i<daftarBarang.size(); i++){
             if (daftarBarang.get(i).getNama_barang().equals(nama)){
@@ -36,11 +26,20 @@ public class Penyedia extends Orang {
         }
     }
     
-    /**
-     * @return the daftarBarang
-     */
     public ArrayList<Barang> getDaftarBarang() {
         return daftarBarang;
+    }
+    
+    @Override
+    public Barang getBarang(int Indeks){
+        Barang barangKetemu;
+        barangKetemu = daftarBarang.get(Indeks);
+        return(barangKetemu);
+    }
+    
+    @Override
+    public void removeBarang(int Indeks){
+        daftarBarang.remove(Indeks);
     }
 }
 

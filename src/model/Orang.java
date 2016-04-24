@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sistem.informasi.data.barang;
+package model;
 
 /**
  *
@@ -50,5 +50,7 @@ public abstract class Orang {
         this.id= id;
     }
     
-    public abstract void lihatBarang(String nama);
+    public abstract Barang getBarang(int Indeks);
+    
+    public abstract void removeBarang(int Indeks);
 }
